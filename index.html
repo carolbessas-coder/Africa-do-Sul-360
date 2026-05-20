@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>África do Sul 360° — CVC Corp</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#F5C800;--gold-light:#F7D340;--gold-pale:#FEF6C0;--earth:#1B2A6B;--earth-mid:#24368A;--savanna:#E8EEF8;--sage:#8A8A8A;--sky:#2B4BA0;--rust:#CD5937;--cream:#F4F6FA;--dark:#0F1A45}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--earth);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:rgba(250,247,242,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,150,42,0.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);letter-spacing:.05em}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--earth-mid);text-decoration:none;opacity:.7;transition:opacity .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 10vw 80px;position:relative;overflow:hidden;background:var(--earth)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(200,150,42,.15) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(74,122,155,.1) 0%,transparent 60%)}
+.hero-inner{display:flex;align-items:center;justify-content:space-between;width:100%;position:relative;z-index:1;gap:60px}
+.hero-left{flex:1}
+.hero-right{flex:0 0 280px;display:flex;align-items:center;justify-content:center}
+.hero-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(200,150,42,.4);padding:6px 16px;border-radius:2px;margin-bottom:40px;animation:fadeUp .8s ease both}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,96px);font-weight:900;line-height:.95;color:var(--savanna);animation:fadeUp .8s ease .1s both}
+.hero h1 span{color:var(--gold-light);font-style:italic}
+.hero-sub{margin-top:32px;font-size:17px;font-weight:300;color:rgba(242,232,213,.7);max-width:480px;line-height:1.7;animation:fadeUp .8s ease .2s both}
+.hero-meta{margin-top:64px;display:flex;gap:48px;animation:fadeUp .8s ease .3s both}
+.hero-meta-item{display:flex;flex-direction:column;gap:4px}
+.hero-meta-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,232,213,.4)}
+.hero-meta-value{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold-light)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:1;animation:fadeUp 1s ease .6s both}
+.hero-scroll span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,232,213,.3)}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(200,150,42,.6),transparent);animation:scrollPulse 2s ease infinite}
+section{padding:100px 10vw}
+.section-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;color:var(--earth);margin-bottom:24px}
+.section-desc{font-size:17px;font-weight:300;color:var(--earth-mid);max-width:600px;line-height:1.8;opacity:.8}
+#contexto{background:var(--cream)}
+.dados-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px;background:rgba(200,150,42,.15);border:1px solid rgba(200,150,42,.2)}
+.dado{background:var(--cream);padding:48px 40px;display:flex;flex-direction:column;gap:8px;transition:background .3s}
+.dado:hover{background:var(--gold-pale)}
+.dado-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold);line-height:1}
+.dado-label{font-size:13px;font-weight:500;color:var(--earth-mid);letter-spacing:.05em}
+.dado-desc{font-size:12px;color:var(--earth-mid);opacity:.6;margin-top:4px}
+.problema-box{margin-top:64px;padding:48px;border-left:3px solid var(--gold);background:var(--earth)}
+.problema-box p{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;font-style:italic;line-height:1.6;color:var(--savanna)}
+.problema-box strong{color:var(--gold-light);font-style:normal}
+#pilares{background:var(--earth);color:var(--savanna)}
+#pilares .section-title{color:var(--savanna)}
+#pilares .section-desc{color:rgba(242,232,213,.6)}
+.pilares-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:64px;background:rgba(200,150,42,.1)}
+.pilar{background:var(--earth);padding:40px 28px;cursor:pointer;transition:background .3s;border-top:2px solid transparent;display:flex;flex-direction:column;gap:16px}
+.pilar:hover,.pilar.active{background:var(--earth-mid);border-top-color:var(--gold)}
+.pilar-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:rgba(200,150,42,.3);line-height:1}
+.pilar-nome{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold-light);line-height:1.2}
+.pilar-desc{font-size:13px;color:rgba(242,232,213,.5);line-height:1.6}
+.pilar-detail{display:none;grid-column:1/-1;background:var(--earth-mid);padding:40px 48px;border-top:1px solid rgba(200,150,42,.2)}
+.pilar-detail.visible{display:block}
+.pilar-detail h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold-light);margin-bottom:24px}
+.pilar-acoes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pilar-acao{background:rgba(200,150,42,.08);border:1px solid rgba(200,150,42,.15);padding:16px 20px;font-size:13px;color:rgba(242,232,213,.8);line-height:1.5;border-radius:2px}
+.pilar-acao::before{content:'→';color:var(--gold);margin-right:8px;font-weight:500}
+#fases{background:var(--savanna)}
+.fases-container{margin-top:64px;display:flex;flex-direction:column;gap:4px}
+.fase{border:1px solid transparent;transition:all .3s;overflow:hidden}
+.fase-header{display:flex;align-items:center;gap:24px;padding:28px 36px;cursor:pointer;background:white;transition:background .2s}
+.fase-header:hover{background:var(--gold-pale)}
+.fase-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;line-height:1;min-width:60px}
+.fase-1 .fase-num{color:var(--sage)}
+.fase-2 .fase-num{color:var(--sky)}
+.fase-3 .fase-num{color:var(--gold)}
+.fase-info{flex:1}
+.fase-titulo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--earth);margin-bottom:4px}
+.fase-subtitulo{font-size:13px;color:var(--earth-mid);opacity:.6}
+.fase-resumo{font-size:13px;color:var(--earth-mid);line-height:1.6;margin-top:8px;max-width:600px;display:none}
+.fase.open .fase-resumo{display:block}
+.fase-toggle{width:32px;height:32px;border:1px solid rgba(44,26,14,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--earth-mid);transition:transform .3s;flex-shrink:0}
+.fase.open .fase-toggle{transform:rotate(45deg)}
+.fase-body{display:none;padding:32px 36px 36px 120px;background:white;border-top:1px solid rgba(200,150,42,.15)}
+.fase.open .fase-body{display:block}
+.fase-itens{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.fase-item{padding:16px 20px;border-radius:2px;display:flex;flex-direction:column;gap:4px;cursor:pointer;transition:all .2s;position:relative}
+.fase-1 .fase-item{background:rgba(122,140,110,.08);border-left:2px solid var(--sage)}
+.fase-2 .fase-item{background:rgba(74,122,155,.08);border-left:2px solid var(--sky)}
+.fase-3 .fase-item{background:rgba(200,150,42,.08);border-left:2px solid var(--gold)}
+.fase-1 .fase-item:hover{background:rgba(122,140,110,.18)}
+.fase-2 .fase-item:hover{background:rgba(74,122,155,.18)}
+.fase-3 .fase-item:hover{background:rgba(200,150,42,.18)}
+.fase-item-titulo{font-size:14px;font-weight:500;color:var(--earth)}
+.fase-item-desc{font-size:12px;color:var(--earth-mid);opacity:.6}
+.fase-item-hint{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:4px;opacity:.7}
+#aereo{background:var(--earth);color:var(--savanna)}
+#aereo .section-title{color:var(--savanna)}
+#aereo .section-desc{color:rgba(242,232,213,.6)}
+.aereo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:64px;background:rgba(200,150,42,.1)}
+.aereo-card{background:var(--earth);padding:48px 40px;display:flex;flex-direction:column;gap:24px}
+.aereo-cia{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-light)}
+.aereo-tag{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:2px;font-weight:500}
+.tag-principal{background:rgba(122,140,110,.2);color:#A8C195;border:1px solid rgba(122,140,110,.3)}
+.tag-secundaria{background:rgba(74,122,155,.2);color:#89B8D4;border:1px solid rgba(74,122,155,.3)}
+.aereo-rotas{display:flex;flex-direction:column;gap:12px}
+.aereo-rota{display:flex;flex-direction:column;gap:4px;padding:16px;background:rgba(200,150,42,.05);border:1px solid rgba(200,150,42,.1)}
+.rota-titulo{font-size:13px;font-weight:500;color:var(--savanna)}
+.rota-detalhe{font-size:12px;color:rgba(242,232,213,.4)}
+.aereo-destaque{padding:16px;background:rgba(200,150,42,.1);border:1px solid rgba(200,150,42,.2);font-size:13px;color:var(--gold-light);font-weight:500}
+#decisoes{background:var(--cream)}
+.decisoes-lista{margin-top:64px;display:flex;flex-direction:column;gap:2px}
+.decisao{display:grid;grid-template-columns:80px 1fr auto;align-items:start;gap:32px;padding:32px 40px;background:white;border-left:3px solid transparent;transition:all .3s}
+.decisao:hover{border-left-color:var(--gold);background:var(--gold-pale)}
+.decisao-prioridade{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;text-align:center;border-radius:2px;white-space:nowrap;margin-top:4px}
+.pri-urgente{background:rgba(181,67,26,.1);color:var(--rust);border:1px solid rgba(181,67,26,.2)}
+.pri-importante{background:rgba(200,150,42,.1);color:var(--gold);border:1px solid rgba(200,150,42,.2)}
+.decisao-texto{display:flex;flex-direction:column;gap:4px}
+.decisao-titulo{font-size:16px;font-weight:500;color:var(--earth)}
+.decisao-desc{font-size:13px;color:var(--earth-mid);opacity:.6}
+.decisao-area{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--earth-mid);opacity:.4;white-space:nowrap}
+footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:space-between;align-items:flex-end}
+.footer-titulo{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--gold-light);line-height:1.1}
+.footer-sub{font-size:13px;color:rgba(242,232,213,.4);margin-top:12px}
+.footer-info{text-align:right;display:flex;flex-direction:column;gap:6px}
+.footer-info span{font-size:12px;color:rgba(242,232,213,.3);letter-spacing:.05em}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(26,18,8,.8);z-index:200;display:flex;align-items:center;justify-content:center;padding:40px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.modal-overlay.active{opacity:1;pointer-events:all}
+.modal{background:var(--cream);max-width:560px;width:100%;padding:48px;position:relative;border-top:3px solid var(--gold);animation:fadeUp .3s ease both}
+.modal-fase{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.modal-titulo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--earth);margin-bottom:16px;line-height:1.2}
+.modal-desc{font-size:15px;color:var(--earth-mid);line-height:1.8;opacity:.85}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border:1px solid rgba(44,26,14,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--earth-mid);background:none;transition:all .2s}
+.modal-close:hover{background:var(--gold-pale);border-color:var(--gold)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">África do Sul 360°</div>
+  <ul class="nav-links">
+    <li><a href="#contexto">Contexto</a></li>
+    <li><a href="#pilares">Pilares</a></li>
+    <li><a href="#fases">Fases</a></li>
+    <li><a href="#aereo">Aéreo</a></li>
+    <li><a href="#decisoes">Decisões</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left" style="max-width:680px">
+      <div class="hero-badge">Projeto Estratégico · Exóticos · CVC Corp</div>
+      <h1>África do<br>Sul <span>360°</span></h1>
+      <p class="hero-sub">Plano de desenvolvimento do destino em cinco pilares — tornando a África do Sul mais clara para quem vende, mais desejável para quem compra.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Responsável</span>
+          <span class="hero-meta-value">Caroline Bessa</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Área</span>
+          <span class="hero-meta-value">Produtos Internacionais</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Data</span>
+          <span class="hero-meta-value">Maio / 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Versão</span>
+          <span class="hero-meta-value">1.0</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Rolar</span>
+  </div>
+</section>
+
+<section id="contexto">
+  <div class="section-label">Diagnóstico</div>
+  <h2 class="section-title reveal">O destino já vende.<br>Agora vamos vender melhor.</h2>
+  <p class="section-desc reveal">A África do Sul não parte do zero. Existe receita, existe venda, existem fornecedores. O ponto é organizar, curar e amplificar o que já tem potencial comprovado.</p>
+
+  <p class="section-desc reveal" style="margin-top:16px;font-size:13px;opacity:.6">Dados de Circuitos 2025 — Special Tours e Europamundo</p>
+  <div class="dados-grid reveal">
+    <div class="dado">
+      <div class="dado-num">R$4,58M</div>
+      <div class="dado-label">Vendas de circuitos 2025</div>
+      <div class="dado-desc">Special Tours e Europamundo · CVC e Visual</div>
+    </div>
+    <div class="dado">
+      <div class="dado-num">408</div>
+      <div class="dado-label">Passageiros embarcados</div>
+      <div class="dado-desc">Concentrados em poucos produtos e fornecedores</div>
+    </div>
+    <div class="dado">
+      <div class="dado-num">R$11.2K</div>
+      <div class="dado-label">Ticket médio por pessoa</div>
+      <div class="dado-desc">Destino de alto valor percebido e margem</div>
+    </div>
+  </div>
+
+  <div class="dados-grid reveal" style="margin-top:2px">
+    <div class="dado">
+      <div class="dado-num">R$39,1M</div>
+      <div class="dado-label">Book Vendas 2025 — total destino</div>
+      <div class="dado-desc">7.836 passageiros · +19% vs LY · +24,2% vs 2019</div>
+    </div>
+    <div class="dado">
+      <div class="dado-num">84,9%</div>
+      <div class="dado-label">Passageiros por produto aéreo</div>
+      <div class="dado-desc">67,5% B2B · 32,5% B2C</div>
+    </div>
+    <div class="dado">
+      <div class="dado-num">+27%</div>
+      <div class="dado-label">Visão de Vendas — receita vs LY</div>
+      <div class="dado-desc">+21% em RN vs LY · crescimento consistente</div>
+    </div>
+  </div>
+
+  <div class="problema-box reveal">
+    <p>A África do Sul já possui fluxo e venda. A oportunidade está em <strong>ampliar a captura de valor com terrestre, hotelaria, safáris, experiências e circuitos melhor posicionados.</strong> Produto disponível não é o mesmo que destino estratégico.</p>
+  </div>
+  <div class="problema-box reveal" style="margin-top:2px;border-left-color:rgba(245,200,0,0.5)">
+    <p style="font-size:16px">O projeto parte de uma <strong>visão CVC Corp</strong>, com potencial de desdobramento futuro por marca, canal e perfil de cliente. As iniciativas apresentadas compõem uma visão 360° — a execução será definida em etapas, considerando dados comerciais, prioridade estratégica e capacidade operacional.</p>
+  </div>
+</section>
+
+<section id="pilares">
+  <div class="section-label" style="color:var(--gold-light)">Os cinco pilares</div>
+  <h2 class="section-title reveal">A estrutura do projeto</h2>
+  <p class="section-desc reveal">Cada pilar tem ações práticas e entregáveis concretos. Clique em cada um para ver o detalhe.</p>
+  <div class="pilares-grid reveal" id="pilares-grid">
+    <div class="pilar" onclick="togglePilar(0)">
+      <div class="pilar-num">01</div>
+      <div class="pilar-nome">Confiança</div>
+      <div class="pilar-desc">Tornar o destino mais seguro para vender</div>
+    </div>
+    <div class="pilar" onclick="togglePilar(1)">
+      <div class="pilar-num">02</div>
+      <div class="pilar-nome">Comunicação</div>
+      <div class="pilar-desc">Transformar informação em mensagem vendável</div>
+    </div>
+    <div class="pilar" onclick="togglePilar(2)">
+      <div class="pilar-num">03</div>
+      <div class="pilar-nome">Integração</div>
+      <div class="pilar-desc">Conectar produto, áreas, fornecedores e canais</div>
+    </div>
+    <div class="pilar" onclick="togglePilar(3)">
+      <div class="pilar-num">04</div>
+      <div class="pilar-nome">Presença</div>
+      <div class="pilar-desc">Fazer o destino aparecer com continuidade</div>
+    </div>
+    <div class="pilar" onclick="togglePilar(4)">
+      <div class="pilar-num">05</div>
+      <div class="pilar-nome">Valor</div>
+      <div class="pilar-desc">Aumentar percepção de valor e recompra</div>
+    </div>
+    <div class="pilar-detail" id="detail-0">
+      <h3>Confiança — tornar o destino mais seguro para vender</h3>
+      <div class="pilar-acoes">
+        <div class="pilar-acao">FAQ "África do Sul sem medo" — objeções e respostas prontas</div>
+        <div class="pilar-acao">Guia rápido do destino para toda a rede</div>
+        <div class="pilar-acao">Comparativo entre Kruger, Pilanesberg e Sabi Sands</div>
+        <div class="pilar-acao">One page por produto — pronta referência</div>
+        <div class="pilar-acao">Matriz de hotéis e lodges recomendados</div>
+        <div class="pilar-acao">Base de perguntas para o Assistente de Exóticos</div>
+      </div>
+    </div>
+    <div class="pilar-detail" id="detail-1">
+      <h3>Comunicação — mensagem certa para cada público</h3>
+      <div class="pilar-acoes">
+        <div class="pilar-acao">Narrativa-mãe do destino — além do safári</div>
+        <div class="pilar-acao">Argumentários por perfil: família, casal, premium</div>
+        <div class="pilar-acao">Estratégia separada por marca: CVC, Visual, Prime</div>
+        <div class="pilar-acao">Pílulas de comunicação interna</div>
+        <div class="pilar-acao">Roteiros curtos comunicados como produto de entrada</div>
+        <div class="pilar-acao">Direcionamento para redes sociais</div>
+      </div>
+    </div>
+    <div class="pilar-detail" id="detail-2">
+      <h3>Integração — conectar produto, áreas, fornecedores e canais</h3>
+      <div class="pilar-acoes">
+        <div class="pilar-acao">Planejamento — dados, calendário e campanhas</div>
+        <div class="pilar-acao">Visual e Visual Prime — posicionamento premium</div>
+        <div class="pilar-acao">Experimento + CVC — piloto lazer + intercâmbio</div>
+        <div class="pilar-acao">Aéreo — SAA e LATAM, bloqueios e extensões</div>
+        <div class="pilar-acao">Akilanga — DMC local, carregamento prioritário</div>
+        <div class="pilar-acao">Universidade CVC — trilha de formação</div>
+      </div>
+    </div>
+    <div class="pilar-detail" id="detail-3">
+      <h3>Presença — destino aparece com continuidade</h3>
+      <div class="pilar-acoes">
+        <div class="pilar-acao">Podcast Exóticos — formato diferenciado de inteligência de destino</div>
+        <div class="pilar-acao">Lives periódicas — destino, vendas e bastidores</div>
+        <div class="pilar-acao">Newsletter quinzenal — Exóticos em Foco</div>
+        <div class="pilar-acao">Influencer CVC — influenciadores no destino</div>
+        <div class="pilar-acao">Entrevistas com especialistas — formato redes + treinamento</div>
+        <div class="pilar-acao">Passageiro Creator CVC — prova social com curadoria</div>
+        <div class="pilar-acao">Shorts e bullets em vídeo — destino em 60 segundos</div>
+        <div class="pilar-acao">Você Sabia periódicos — história e cultura</div>
+        <div class="pilar-acao">Vídeos de hotéis e lodges</div>
+      </div>
+    </div>
+    <div class="pilar-detail" id="detail-4">
+      <h3>Valor — percepção de valor e jornada de recompra</h3>
+      <div class="pilar-acoes">
+        <div class="pilar-acao">Argumentos de valor por perfil de cliente</div>
+        <div class="pilar-acao">Cape Town posicionada como cidade-desejo</div>
+        <div class="pilar-acao">Safári explicado sem prometer avistamento específico</div>
+        <div class="pilar-acao">CVC Me Leva — Amantes de Vinhos · 5 continentes</div>
+        <div class="pilar-acao">Passaporte CVC Me Leva — fidelização e recompra</div>
+        <div class="pilar-acao">Curso amplo com hoteleiros, fornecedores e todas as marcas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fases">
+  <div class="section-label">Execução</div>
+  <h2 class="section-title reveal">Três fases,<br>prioridade clara.</h2>
+  <p class="section-desc reveal">Clique em cada fase para ver todos os itens. Clique em cada item para entender o que é e por que importa.</p>
+  <div class="fases-container reveal">
+
+    <div class="fase fase-1 open" id="fase-1">
+      <div class="fase-header" onclick="toggleFase('fase-1')">
+        <div class="fase-num">01</div>
+        <div class="fase-info">
+          <div class="fase-titulo">Base do projeto — fazer agora</div>
+          <div class="fase-subtitulo">Produto, fornecedores, materiais, treinamento inicial e bloqueios aéreos</div>
+          <div class="fase-resumo">A Fase 1 organiza o que já existe e prepara a estrutura mínima para o projeto funcionar. Sem essa base, as fases seguintes não têm onde se apoiar. Foco: produto carregado, rede informada e aéreo ativado.</div>
+        </div>
+        <div class="fase-toggle">+</div>
+      </div>
+      <div class="fase-body">
+        <div class="fase-itens">
+          <div class="fase-item" onclick="openModal('Akilanga — DMC local prioritária','Fase 1 — Base','A Akilanga é o DMC local da África do Sul com anos de parceria com a CVC. Tem rede consolidada de hotéis, guias e operações no destino. Hoje os produtos não estão carregados em sistema por falta de prioridade — não por impedimento técnico. A ação é solicitar portfólio completo e iniciar o carregamento imediato dos produtos prioritários.')"><div class="fase-item-titulo">Akilanga — DMC local prioritária</div><div class="fase-item-desc">Avaliação e carregamento prioritário</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Curadoria de circuitos','Fase 1 — Base','Revisar todos os roteiros de África do Sul carregados atualmente. Identificar quais têm potencial real, quais têm hotéis problemáticos e quais devem ser descontinuados. O objetivo é ter uma prateleira enxuta e defensável — poucos produtos, bem posicionados e com conteúdo correto.')"><div class="fase-item-titulo">Curadoria de circuitos</div><div class="fase-item-desc">Manter, revisar ou remover roteiros</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Aéreo — SAA e LATAM','Fase 1 — Base','Mapear todas as frequências disponíveis. SAA opera GRU→JNB (seg/qui) e GRU→CPT (ter/sáb). LATAM opera GRU→JNB e estreia GRU→CPT em julho/2026. Entender janelas de voo é a base para montar qualquer produto com aéreo incluído.')"><div class="fase-item-titulo">Aéreo — SAA e LATAM</div><div class="fase-item-desc">Mapear frequências e condições</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Guia rápido do destino','Fase 1 — Base','Material de consulta rápida para o vendedor: o que é a África do Sul, principais regiões, melhor época, o que não prometer, perfil de cliente por produto. O objetivo é reduzir o medo de vender um destino complexo. Deve ser acessível em segundos — não um PDF de 40 páginas.')"><div class="fase-item-titulo">Guia rápido do destino</div><div class="fase-item-desc">Pronta referência para toda a rede</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('One page por destino','Fase 1 — Base','Uma página por produto: nome comercial, itinerário resumido, hotéis, inclusões, perfil de cliente ideal e argumento de venda. O vendedor abre, lê em 30 segundos e já sabe o que está oferecendo. Elimina a necessidade de consultar o sistema para cada dúvida.')"><div class="fase-item-titulo">One page por produto</div><div class="fase-item-desc">Produto, hotel e passeios em uma página</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('FAQ — África do Sul sem medo','Fase 1 — Base','Lista de objeções reais que o vendedor enfrenta — segurança, preço, complexidade, distância — com respostas claras e honestas. Construído a partir da imersão real no destino e das dúvidas levantadas pela rede. Base também para o futuro Assistente de Exóticos.')"><div class="fase-item-titulo">FAQ — sem medo</div><div class="fase-item-desc">Objeções e respostas prontas</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Treinamento inicial','Fase 1 — Base','Primeiro treinamento de destino — não de produto específico. Foco em fazer o vendedor entender a África do Sul como um todo: regiões, safáris, Cape Town, vinícolas, perfis de cliente. Os facilitadores serão os próprios fornecedores (Akilanga, etc.) ou a equipe de Produtos, garantindo conteúdo técnico e real.')"><div class="fase-item-titulo">Treinamento inicial</div><div class="fase-item-desc">Fornecedores ou Produtos como facilitadores</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Cronograma periódico de treinamentos','Fase 1 — Base','Definir com Planejamento um calendário fixo de treinamentos — não pontuais. A ideia é criar presença contínua do destino na agenda da rede. Pode ser mensal, bimestral ou por tema. O importante é sair do modelo de treinamento isolado e criar rotina.')"><div class="fase-item-titulo">Cronograma periódico</div><div class="fase-item-desc">Rotina de capacitação — alinhado com Planejamento</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Comunicação interna e redes','Fase 1 — Base','Definir como o destino vai aparecer nos canais internos da CVC Corp — grupos de WhatsApp, intranet, e-mails, showcases digitais. Cada canal tem um formato ideal. O objetivo é criar presença do destino antes de qualquer campanha externa.')"><div class="fase-item-titulo">Comunicação interna</div><div class="fase-item-desc">Direcionamento para redes e canais internos</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Bloqueios aéreos — SAA','Fase 1 — Base','A SAA é o principal trunfo aéreo: prazo de devolução de 45 dias (vs. 90–110 da LATAM), risco baixo e grupos a partir de 10 pax. A ação desta fase é confirmar os bloqueios existentes, avaliar extensão de assentos, abrir novas datas e explorar novas origens além de GRU.')"><div class="fase-item-titulo">Bloqueios aéreos — SAA</div><div class="fase-item-desc">Confirmar, expandir datas e novas origens</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Roteiros curtos','Fase 1 — Base','Divulgar produtos de menor duração — Cape Town em 5 dias, safári de fim de semana, extensões modulares. São produtos de entrada para públicos que não comprariam 10 dias. Abrem mercado novo sem canibalizar o produto principal e são mais fáceis de vender para primeira viagem.')"><div class="fase-item-titulo">Roteiros curtos</div><div class="fase-item-desc">Produtos de entrada e menor duração</div><div class="fase-item-hint">Clique para saber mais</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fase fase-2" id="fase-2">
+      <div class="fase-header" onclick="toggleFase('fase-2')">
+        <div class="fase-num">02</div>
+        <div class="fase-info">
+          <div class="fase-titulo">Expansão — após base rodando</div>
+          <div class="fase-subtitulo">Conteúdo, treinamento especializado, influencers, tecnologia e parcerias</div>
+          <div class="fase-resumo">Com produto carregado e rede treinada, a Fase 2 amplia presença, gera desejo e constrói autoridade. É onde o destino começa a aparecer de forma consistente para dentro e para fora da empresa.</div>
+        </div>
+        <div class="fase-toggle">+</div>
+      </div>
+      <div class="fase-body">
+        <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.08)">Conteúdo recorrente · Capacitação avançada · Marketing e influência · Tecnologia · Relacionamento e presença</p>
+        <div class="fase-itens">
+          <div class="fase-item" onclick="openModal('Piloto Experimento + CVC','Fase 2 — Expansão','Produto combinado de lazer e intercâmbio de curta duração em Cape Town. A ideia é integrar a estrutura do Experimento (módulos educacionais, voluntariado) com pacotes de lazer da CVC, criando um produto novo para jovens e profissionais. Registro nos sistemas Experimento e CVC para venda em ambas as marcas com relatórios separados por origem.')"><div class="fase-item-titulo">Piloto Experimento + CVC</div><div class="fase-item-desc">Produto combinado lazer + intercâmbio</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Shorts e bullets em vídeo','Fase 2 — Expansão','Vídeos curtos de 30 a 60 segundos sobre o destino — curiosidades, experiências, comparativos de safári, dicas de Cape Town. Formato Reels e Shorts, produzidos com conteúdo da imersão real no destino. Cada vídeo responde uma dúvida específica ou apresenta um aspecto do destino de forma visual e rápida.')"><div class="fase-item-titulo">Shorts e bullets em vídeo</div><div class="fase-item-desc">Destino em 60 segundos</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Você Sabia periódicos','Fase 2 — Expansão','Série de conteúdos sobre história, cultura e turismo da África do Sul. Formato simples e curto — uma informação surpreendente por publicação. O objetivo é criar repertório no vendedor e no cliente sobre o destino além do óbvio. Pode ser card, vídeo curto ou texto para newsletter.')"><div class="fase-item-titulo">Você Sabia periódicos</div><div class="fase-item-desc">História, cultura e turismo</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Podcast Exóticos','Fase 2 — Expansão','Podcast em formato diferenciado — não um relato de viagem, mas inteligência de destino. Cada episódio responde uma pergunta real do vendedor ou do cliente: como vender safári, diferença entre Kruger e Sabi Sands, Cape Town em 5 dias, segurança, vinhos. Âncora fixa da área de Exóticos com convidados rotativos — fornecedores, guias locais, especialistas e influencers. Distribuição no Spotify, YouTube e Universidade CVC.')"><div class="fase-item-titulo">Podcast Exóticos</div><div class="fase-item-desc">Inteligência de destino em áudio</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Lives periódicas','Fase 2 — Expansão','Lives regulares em três formatos: Live de destino (produto em foco com fornecedor convidado), Live de vendas (como vender, objeções, dicas práticas) e Live de bastidores (hotel, lodge, experiência real). Baixo custo, alto alcance interno e externo. Pode ser gravada e reutilizada como conteúdo.')"><div class="fase-item-titulo">Lives periódicas</div><div class="fase-item-desc">Destino, vendas e bastidores</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Newsletter — Exóticos em Foco','Fase 2 — Expansão','Newsletter quinzenal com três blocos fixos: Destino da quinzena (novidade sobre África do Sul ou outro exótico), Produto em destaque (roteiro, novidade, bloqueio aberto) e Você Sabia (curiosidade de história ou cultura para o vendedor usar na conversa com o cliente). Para a rede interna e para o cliente final.')"><div class="fase-item-titulo">Newsletter quinzenal</div><div class="fase-item-desc">Exóticos em Foco</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Vídeos de hotéis e lodges','Fase 2 — Expansão','Vídeos curtos mostrando os hotéis e lodges dos roteiros. O vendedor precisa ver o produto para vender com confiança. Conteúdo gerado na imersão ou solicitado aos fornecedores. Serve como material de treinamento, conteúdo de redes e apoio de venda na conversa com o cliente.')"><div class="fase-item-titulo">Vídeos de hotéis e lodges</div><div class="fase-item-desc">Produto em imagem real</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Treinamento especializado em lodges','Fase 2 — Expansão','Treinamento focado exclusivamente em lodges e safáris — diferença entre Kruger, Sabi Sands, Pilanesberg, Kapama, Karongwe. Como explicar o produto, o que esperar, o que não prometer, política de crianças, logística. Para vendedores que já têm base e querem se especializar.')"><div class="fase-item-titulo">Treinamento de lodges</div><div class="fase-item-desc">Especializado por tipo de safári</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Treinamento de vinhos e Winelands','Fase 2 — Expansão','Treinamento sobre enoturismo na África do Sul — Stellenbosch, Franschhoek, Constantia, principais vinícolas, como combinar com roteiro de Cape Town. Produto aspiracional para Visual e Visual Prime. O vendedor que entende vinhos vende experiência, não só roteiro.')"><div class="fase-item-titulo">Treinamento de vinhos</div><div class="fase-item-desc">Winelands e enoturismo</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Treinamento intensivo 3 dias','Fase 2 — Expansão','Treinamento completo de 3 dias com certificado e botton de especialista em Exóticos. Cobre destino, produto, fornecedores, vendas e objeções. Para vendedores que querem se tornar referência. O certificado gera reconhecimento interno e o botton é símbolo de autoridade na rede.')"><div class="fase-item-titulo">Treinamento 3 dias</div><div class="fase-item-desc">Com certificado e botton de especialista</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Influencer CVC','Fase 2 — Expansão','Levar influenciador de perfil familiar e aspiracional acessível ao destino para gerar conteúdo real — Cape Town, safári, vinícolas. Conteúdo de alto impacto que coloca a África do Sul no imaginário do cliente brasileiro.')"><div class="fase-item-titulo">Influencer CVC</div><div class="fase-item-desc">Família brasileira, perfil aspiracional</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Entrevistas com especialistas','Fase 2 — Expansão','Formato de entrevista com especialistas de viagem, guias locais, fornecedores e viajantes experientes. Serve como conteúdo para redes sociais e também como material de treinamento interno. Cada entrevista responde uma dúvida real sobre o destino com quem conhece de dentro.')"><div class="fase-item-titulo">Entrevistas com especialistas</div><div class="fase-item-desc">Formato redes + treinamento</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Passageiro Creator CVC','Fase 2 — Expansão','Passageiros que viajam com a CVC e marcam a marca podem ter seus conteúdos avaliados, reconhecidos e recompensados com benefício ou destaque nos canais oficiais. Gera prova social real — não produção publicitária. Precisa de regulamento, curadoria e autorização de imagem.')"><div class="fase-item-titulo">Passageiro Creator CVC</div><div class="fase-item-desc">Prova social com curadoria</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Mapa interativo — Atlas','Fase 2 — Expansão','Conteúdo visual interativo no Atlas mostrando o destino de forma geográfica e experiencial. O vendedor ou cliente clica nas regiões e vê o que tem em cada uma — Cape Town, Winelands, Kruger, Garden Route, Victoria Falls. Torna o destino mais compreensível visualmente.')"><div class="fase-item-titulo">Mapa interativo — Atlas</div><div class="fase-item-desc">Conteúdo visual interativo por região</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Assistente de Exóticos — Robô Interativo','Fase 2 — Expansão','Base de perguntas e respostas sobre a África do Sul validada pela equipe de Produtos. Começa como um FAQ inteligente e evolui para um robô interativo que o vendedor consulta em tempo real durante o atendimento ao cliente. As perguntas iniciais já estão mapeadas — segurança, safári, roteiro por perfil, vinhos.')"><div class="fase-item-titulo">Assistente de Exóticos</div><div class="fase-item-desc">Robô interativo de consulta</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Trilha na Universidade CVC','Fase 2 — Expansão','Trilha de formação África do Sul 360° na plataforma da Universidade CVC. Módulos: sem medo, Cape Town, safári para vender, vinhos, produto por perfil, objeções. O vendedor faz no próprio ritmo e recebe certificação interna. Pode evoluir para trilhas de outros destinos exóticos.')"><div class="fase-item-titulo">Universidade CVC</div><div class="fase-item-desc">Trilha África do Sul 360°</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Evento com governo','Fase 2 — Expansão','Evento de posicionamento institucional com participação do governo ou turismo da África do Sul. Reforça a parceria oficial, gera credibilidade para a CVC como especialista no destino e abre portas para materiais, apoio e co-investimento em ações futuras.')"><div class="fase-item-titulo">Evento com governo</div><div class="fase-item-desc">Posicionamento institucional</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Blitz de Exóticos','Fase 2 — Expansão','Ação presencial onde a equipe de Produtos vai até as unidades de negócio e filiais para se aproximar do vendedor final. Não é treinamento formal — é relacionamento. A equipe apresenta o destino de forma descontraída, tira dúvidas no olho no olho, deixa material e cria conexão direta entre quem cuida do produto e quem vende. O vendedor passa a saber quem procurar e se sentir apoiado para oferecer exóticos com confiança.')"><div class="fase-item-titulo">Blitz de Exóticos</div><div class="fase-item-desc">Equipe de Produtos nas unidades e filiais</div><div class="fase-item-hint">Clique para saber mais</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fase fase-3" id="fase-3">
+      <div class="fase-header" onclick="toggleFase('fase-3')">
+        <div class="fase-num">03</div>
+        <div class="fase-info">
+          <div class="fase-titulo">Visão de futuro — apresentar como evolução</div>
+          <div class="fase-subtitulo">Fidelização, novos mercados, metodologia e expansão para outros destinos</div>
+          <div class="fase-resumo">A Fase 3 mostra onde o projeto pode chegar. Não são promessas para agora — são direções estratégicas que nascem da base construída nas fases anteriores. Apresentar como visão, não como compromisso imediato.</div>
+        </div>
+        <div class="fase-toggle">+</div>
+      </div>
+      <div class="fase-body">
+        <div class="fase-itens">
+          <div class="fase-item" onclick="openModal('CVC Me Leva — Amantes de Vinhos','Fase 3 — Visão de futuro','Linha de roteiros curada para quem ama vinho — cinco continentes, cada destino com experiência enogastronômica como âncora. A África do Sul (Stellenbosch, Franschhoek) seria o piloto. Produto de nicho com alto ticket e público fidelizado. Pode virar uma vertente temática dentro do CVC Me Leva.')"><div class="fase-item-titulo">CVC Me Leva — Amantes de Vinhos</div><div class="fase-item-desc">5 continentes para quem ama vinho</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('África de Aventura','Fase 3 — Visão de futuro','Linha de produto que posiciona a África do Sul e outros destinos africanos de uma forma que ninguém ainda fez no mercado brasileiro — experiências imersivas, natureza bruta, aventura com conforto. Não é trekking radical. É mostrar o destino como ninguém nunca viu: trilhas, vida selvagem, culturas locais, experiências únicas.')"><div class="fase-item-titulo">África de Aventura</div><div class="fase-item-desc">Destino como ninguém nunca viu</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Programa Rotativo de Exóticos','Fase 3 — Visão de futuro','Programa mensal ou bimestral com um destino exótico em destaque — conteúdo, treinamento, campanha e produto coordenados ao mesmo tempo. A África do Sul seria o piloto. Depois vem Marrocos, Turquia, Tailândia. Cria uma cadência que mantém exóticos sempre presente no calendário comercial.')"><div class="fase-item-titulo">Programa Rotativo de Exóticos</div><div class="fase-item-desc">Destino em destaque por período</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Passaporte CVC Me Leva','Fase 3 — Visão de futuro','Sistema de fidelização para passageiros recorrentes — não como desconto, mas como jornada de destinos. Quem viajou para África do Sul recebe comunicações sobre Marrocos, Japão, Tailândia, destinos de vinho, safáris premium. Uma viagem vendida abre caminho para a próxima. A relação com o cliente não termina no embarque.')"><div class="fase-item-titulo">Passaporte CVC Me Leva</div><div class="fase-item-desc">Fidelização e jornada de destinos</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Curso amplo de Exóticos','Fase 3 — Visão de futuro','Curso de formação mais amplo — não só para consultores da CVC, mas para hoteleiros, fornecedores e todas as marcas do grupo. Pode evoluir para certificação externa reconhecida pelo mercado. A CVC se posiciona como referência em formação de destinos exóticos no Brasil.')"><div class="fase-item-titulo">Curso amplo de Exóticos</div><div class="fase-item-desc">Hoteleiros, fornecedores e todas as marcas</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Exóticos 360° — metodologia','Fase 3 — Visão de futuro','O que foi construído para a África do Sul vira metodologia replicável para outros destinos: Marrocos, Turquia, Tailândia, Japão. Produto, comunicação, treinamento e presença seguindo a mesma estrutura de cinco pilares. A África do Sul é o piloto que prova que funciona.')"><div class="fase-item-titulo">Exóticos 360° — metodologia</div><div class="fase-item-desc">Modelo replicável para outros destinos</div><div class="fase-item-hint">Clique para saber mais</div></div>
+          <div class="fase-item" onclick="openModal('Material de rede completo','Fase 3 — Visão de futuro','Cobertura completa de toda a rede CVC Corp com material de apoio à venda de destinos exóticos — não só África do Sul. Franqueados, lojas próprias, canais digitais e B2B todos com material padronizado, atualizado e acessível. Meta de longo prazo que depende da base estar consolidada.')"><div class="fase-item-titulo">Material de rede completo</div><div class="fase-item-desc">Toda a rede CVC Corp coberta</div><div class="fase-item-hint">Clique para saber mais</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aereo">
+  <div class="section-label" style="color:var(--gold-light)">Estratégia aérea</div>
+  <h2 class="section-title reveal">Duas companhias.<br>Papéis distintos.</h2>
+  <p class="section-desc reveal">A SAA é o trunfo principal. A LATAM abre uma nova porta com o voo direto para Cape Town a partir de julho de 2026.</p>
+  <div class="aereo-grid reveal">
+    <div class="aereo-card">
+      <div><div class="aereo-cia">South African Airways</div><span class="aereo-tag tag-principal">Fornecedor principal</span></div>
+      <div class="aereo-rotas">
+        <div class="aereo-rota"><div class="rota-titulo">GRU → Joanesburgo (JNB)</div><div class="rota-detalhe">Segundas e quintas · A330-300 · 249 passageiros</div></div>
+        <div class="aereo-rota"><div class="rota-titulo">GRU → Cape Town (CPT)</div><div class="rota-detalhe">Terças e sábados · Operação regular</div></div>
+      </div>
+      <div class="aereo-destaque">✦ Devolução em 45 dias · Risco baixo · Grupos a partir de 10 pax · Stopover gratuito em JNB · Codeshare GOL</div>
+    </div>
+    <div class="aereo-card">
+      <div><div class="aereo-cia">LATAM</div><span class="aereo-tag tag-secundaria">Complementar</span></div>
+      <div class="aereo-rotas">
+        <div class="aereo-rota"><div class="rota-titulo">GRU → Joanesburgo (JNB)</div><div class="rota-detalhe">Operação regular · Voo direto</div></div>
+        <div class="aereo-rota"><div class="rota-titulo">GRU → Cape Town (CPT) · NOVO</div><div class="rota-detalhe">A partir de julho/2026 · Qua, Sex e Dom · Saída 22h45 · Chegada 10h55</div></div>
+      </div>
+      <div class="aereo-destaque">⚠ Devolução 90–110 dias · Risco maior · Usar com cautela para bloqueios</div>
+    </div>
+  </div>
+</section>
+
+<section id="decisoes">
+  <div class="section-label">Próximos passos</div>
+  <h2 class="section-title reveal">O que precisa<br>ser decidido.</h2>
+  <p class="section-desc reveal">Estas são as decisões que desbloqueiam o projeto.</p>
+  <div class="decisoes-lista reveal">
+    <div class="decisao">
+      <div class="decisao-prioridade pri-urgente">Urgente</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Validar bases comerciais e recortes de dados</div>
+        <div class="decisao-desc">Confirmar leitura dos números de circuitos vs. total destino e definir os dados que guiarão as decisões.</div>
+      </div>
+      <div class="decisao-area">Caroline + Planejamento</div>
+    </div>
+    <div class="decisao">
+      <div class="decisao-prioridade pri-urgente">Urgente</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Definir modelo de fornecedores para produto e bloqueios</div>
+        <div class="decisao-desc">Manter Special Tours ou trazer DMC final para gestão? Essa decisão trava produto e campanha.</div>
+      </div>
+      <div class="decisao-area">Nathalia + Caroline</div>
+    </div>
+    <div class="decisao">
+      <div class="decisao-prioridade pri-urgente">Urgente</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Avaliar carregamento prioritário da Akilanga</div>
+        <div class="decisao-desc">Solicitar portfólio completo e definir produtos prioritários para carregamento.</div>
+      </div>
+      <div class="decisao-area">Caroline + Thalita</div>
+    </div>
+    <div class="decisao">
+      <div class="decisao-prioridade pri-importante">Importante</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Confirmar e expandir bloqueios aéreos SAA</div>
+        <div class="decisao-desc">Verificar datas disponíveis, novos assentos e novas origens além de GRU.</div>
+      </div>
+      <div class="decisao-area">Caroline + Aéreo</div>
+    </div>
+    <div class="decisao">
+      <div class="decisao-prioridade pri-importante">Importante</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Alinhar cronograma de capacitação e comunicação</div>
+        <div class="decisao-desc">Definir quem facilita, formato, plataforma e primeiras datas do cronograma periódico.</div>
+      </div>
+      <div class="decisao-area">Caroline + Planejamento</div>
+    </div>
+    <div class="decisao">
+      <div class="decisao-prioridade pri-importante">Importante</div>
+      <div class="decisao-texto">
+        <div class="decisao-titulo">Avaliar piloto Experimento + CVC em segunda etapa</div>
+        <div class="decisao-desc">Preparar proposta formal e registrar no Sistur para testes de venda em ambas as marcas.</div>
+      </div>
+      <div class="decisao-area">Caroline + Visual + Nathalia</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-titulo">África do Sul 360°</div>
+    <p class="footer-sub">Do produto disponível ao destino desejado.</p>
+    <p class="footer-sub" style="margin-top:8px;font-size:11px;opacity:.5">A proposta não é criar demanda do zero, mas organizar, ampliar e capturar melhor uma demanda que já existe.</p>
+    
+  </div>
+  <div class="footer-info">
+    <span>Caroline Bessa</span>
+    <span>Produtos Internacionais · Exóticos</span>
+    <span>CVC Corp · Maio 2026</span>
+    <span>Versão 1.0</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-fase" id="modal-fase"></div>
+    <div class="modal-titulo" id="modal-titulo"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+  </div>
+</div>
+
+<script>
+function togglePilar(index){
+  const pilares=document.querySelectorAll('.pilar');
+  const details=document.querySelectorAll('.pilar-detail');
+  const detail=document.getElementById('detail-'+index);
+  const isOpen=detail.classList.contains('visible');
+  details.forEach(d=>d.classList.remove('visible'));
+  pilares.forEach(p=>p.classList.remove('active'));
+  if(!isOpen){detail.classList.add('visible');pilares[index].classList.add('active');}
+}
+function toggleFase(id){
+  const fase=document.getElementById(id);
+  fase.classList.toggle('open');
+}
+function openModal(titulo,fase,desc){
+  document.getElementById('modal-titulo').textContent=titulo;
+  document.getElementById('modal-fase').textContent=fase;
+  document.getElementById('modal-desc').textContent=desc;
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e){
+  if(e.target===document.getElementById('modal-overlay'))closeModal();
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+  });
+},{threshold:0.1});
+reveals.forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
