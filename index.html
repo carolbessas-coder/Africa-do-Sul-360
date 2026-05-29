@@ -35,7 +35,6 @@ section{padding:100px 10vw}
 .section-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;color:var(--earth);margin-bottom:24px}
 .section-desc{font-size:17px;font-weight:300;color:var(--earth-mid);max-width:600px;line-height:1.8;opacity:.8}
-
 /* CONTEXTO */
 #contexto{background:var(--cream)}
 .dados-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px;background:rgba(245,200,0,.15);border:1px solid rgba(245,200,0,.2)}
@@ -47,7 +46,6 @@ section{padding:100px 10vw}
 .problema-box{margin-top:32px;padding:40px 48px;border-left:3px solid var(--gold);background:var(--earth)}
 .problema-box p{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;font-style:italic;line-height:1.6;color:#E8EEF8}
 .problema-box strong{color:var(--gold-light);font-style:normal}
-
 /* JORNADA 360 */
 #jornada{background:var(--earth)}
 #jornada .section-title{color:#E8EEF8}
@@ -62,10 +60,8 @@ section{padding:100px 10vw}
 .jornada-status{font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:4px;font-weight:600}
 .status-ok{color:#7BC67E}
 .status-novo{color:var(--gold)}
-
 .jornada-frase p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:rgba(232,238,248,.7);line-height:1.8}
 .jornada-frase strong{color:var(--gold-light);font-style:normal}
-
 /* PILARES */
 #pilares{background:#F8F9FD}
 .pilares-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:64px;background:rgba(245,200,0,.1)}
@@ -83,7 +79,6 @@ section{padding:100px 10vw}
 .pilar-acoes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .pilar-acao{background:rgba(245,200,0,.06);border:1px solid rgba(245,200,0,.15);padding:16px 20px;font-size:13px;color:rgba(232,238,248,.8);line-height:1.5;border-radius:2px}
 .pilar-acao::before{content:'→';color:var(--gold);margin-right:8px;font-weight:500}
-
 /* FASES */
 #fases{background:var(--cream)}
 .fases-container{margin-top:64px;display:flex;flex-direction:column;gap:4px}
@@ -121,7 +116,6 @@ section{padding:100px 10vw}
 .fase-item-titulo{font-size:14px;font-weight:500;color:var(--earth)}
 .fase-item-desc{font-size:12px;color:var(--earth-mid);opacity:.6}
 .fase-item-hint{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:4px;opacity:.7}
-
 /* AEREO */
 #aereo{background:var(--earth)}
 #aereo .section-title{color:#E8EEF8}
@@ -137,7 +131,6 @@ section{padding:100px 10vw}
 .rota-titulo{font-size:13px;font-weight:500;color:#E8EEF8}
 .rota-detalhe{font-size:12px;color:rgba(232,238,248,.35)}
 .aereo-destaque{padding:16px;background:rgba(245,200,0,.08);border:1px solid rgba(245,200,0,.2);font-size:13px;color:var(--gold-light);font-weight:500}
-
 /* DECISOES */
 #decisoes{background:#F8F9FD}
 .decisoes-lista{margin-top:64px;display:flex;flex-direction:column;gap:2px}
@@ -149,7 +142,6 @@ section{padding:100px 10vw}
 .decisao-titulo{font-size:15px;font-weight:500;color:var(--earth);margin-bottom:4px}
 .decisao-desc{font-size:13px;color:var(--earth-mid);opacity:.6}
 .decisao-area{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);white-space:nowrap;margin-top:4px}
-
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(15,26,69,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:40px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
 .modal-overlay.active{opacity:1;pointer-events:all}
@@ -160,7 +152,6 @@ section{padding:100px 10vw}
 .modal-novo{margin-top:16px;padding:12px 16px;background:rgba(245,200,0,.1);border:1px solid rgba(245,200,0,.3);font-size:12px;color:#8A6A00;border-radius:2px}
 .modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border:1px solid rgba(27,42,107,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--earth-mid);background:none;transition:all .2s}
 .modal-close:hover{background:var(--gold-pale);border-color:var(--gold)}
-
 /* FOOTER */
 footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:space-between;align-items:flex-end}
 .footer-titulo{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--gold-light);line-height:1.1}
@@ -169,19 +160,12 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .footer-info{text-align:right;display:flex;flex-direction:column;gap:6px}
 .footer-info span{font-size:12px;color:rgba(232,238,248,.3);letter-spacing:.05em}
 .footer-versao{display:inline-block;margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,200,0,.3);padding:4px 10px;border-radius:2px}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
-
-
-
 /* JORNADA ETAPA CLICAVEL */
 .jornada-etapa{cursor:default}
-
-
 /* EXEC LAYOUT */
 .exec-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;margin-top:64px;align-items:start}
 .exec-cards{display:flex;flex-direction:column;gap:8px}
@@ -203,7 +187,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .btn-analisar:hover{background:var(--gold);color:var(--earth)}
 .btn-negar{background:#FEEEEB;color:#C62828;border:1px solid #FFCDD2}
 .btn-negar:hover{background:var(--rust);color:white}
-
 /* PAINEL */
 .exec-painel{background:var(--earth);padding:28px;border-radius:2px;position:sticky;top:80px}
 .painel-titulo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--gold-light);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(245,200,0,.2)}
@@ -217,7 +200,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .painel-vazio{font-size:11px;color:rgba(232,238,248,.2);font-style:italic}
 .painel-reset{width:100%;margin-top:16px;padding:10px;background:rgba(245,200,0,.1);border:1px solid rgba(245,200,0,.2);color:rgba(232,238,248,.5);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s}
 .painel-reset:hover{background:rgba(245,200,0,.2);color:var(--gold)}
-
 /* JORNADA MODAL */
 .jornada-modal-overlay{position:fixed;inset:0;background:rgba(15,26,69,.9);z-index:300;display:flex;align-items:center;justify-content:center;padding:40px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
 .jornada-modal-overlay.active{opacity:1;pointer-events:all}
@@ -227,9 +209,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .jornada-modal-desc{font-size:14px;color:rgba(232,238,248,.75);line-height:1.8}
 .jornada-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:1px solid rgba(245,200,0,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:rgba(245,200,0,.6);background:none}
 .jornada-modal-close:hover{background:rgba(245,200,0,.1)}
-
-
-
 .float-painel{position:fixed;bottom:20px;right:20px;z-index:150;background:rgba(15,26,69,.97);border:1px solid rgba(245,200,0,.25);border-top:2px solid var(--gold);padding:14px 18px;width:190px;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,.5);backdrop-filter:blur(8px)}
 .fp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;cursor:pointer}
 .fp-titulo{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
@@ -250,8 +229,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .fp-btn-export{background:rgba(245,200,0,.1);border-color:rgba(245,200,0,.3);color:var(--gold-light)}
 .fp-btn-export:hover{background:var(--gold);color:var(--earth)}
 .float-painel.collapsed .fp-counts,.float-painel.collapsed .fp-btns{display:none}
-
-
 /* ROADMAP */
 #roadmap{background:var(--cream)}
 .rm-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;background:rgba(245,200,0,.15);border:1px solid rgba(245,200,0,.2)}
@@ -295,7 +272,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .rm-col-header{display:grid;grid-template-columns:48px 1fr 140px 140px 110px;gap:0;background:var(--earth-mid);margin-bottom:2px}
 .rm-col-header span{padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,200,0,.6);font-weight:600;border-right:1px solid rgba(245,200,0,.1)}
 .rm-col-header span:first-child{text-align:center}
-
 .rm-col-header{display:grid;grid-template-columns:48px 1fr 140px 120px 110px 32px;gap:0;background:var(--earth-mid);margin-bottom:2px}
 .rm-col-header span{padding:10px 16px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,200,0,.6);font-weight:600;border-right:1px solid rgba(245,200,0,.1)}
 .rm-item{display:grid;grid-template-columns:48px 1fr 140px 120px 110px 32px;gap:0;background:white;border-bottom:1px solid rgba(27,42,107,.06);transition:background .2s;cursor:pointer;user-select:none}
@@ -314,7 +290,6 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 </style>
 </head>
 <body>
-
 <!-- SENHA -->
 <style>
 #login-screen{position:fixed;inset:0;background:#1B2A6B;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
@@ -341,7 +316,6 @@ function verificar(){
 }
 document.body.style.overflow='hidden';
 </script>
-
 <!-- NAV -->
 <nav>
   <div class="nav-logo">África do Sul 360°</div>
@@ -354,7 +328,6 @@ document.body.style.overflow='hidden';
     <li><a href="#roadmap">Roadmap</a></li>
   </ul>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -372,7 +345,6 @@ document.body.style.overflow='hidden';
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span>Rolar</span></div>
 </section>
-
 <!-- CONTEXTO -->
 <section id="contexto">
   <div class="section-label">Diagnóstico</div>
@@ -396,7 +368,6 @@ document.body.style.overflow='hidden';
     <p style="font-size:16px">O projeto parte de uma <strong>visão CVC Corp</strong>. As iniciativas compõem uma jornada 360° — a execução será definida em etapas, considerando dados comerciais, prioridade estratégica e capacidade operacional.</p>
   </div>
 </section>
-
 <!-- JORNADA 360 -->
 <section id="jornada">
   <div class="section-label" style="color:var(--gold-light)">O ciclo completo</div>
@@ -449,11 +420,9 @@ document.body.style.overflow='hidden';
       <div class="jornada-desc">Donos por frente, prazos, indicadores, reunião de acompanhamento, critérios para...</div>
     </div>
   </div>
-
     </div>
   </div>
 </section>
-
 <!-- PILARES -->
 <section id="pilares">
   <div class="section-label">Os cinco pilares</div>
@@ -525,14 +494,12 @@ document.body.style.overflow='hidden';
     </div>
   </div>
 </section>
-
 <!-- FASES -->
 <section id="fases">
   <div class="section-label">Execução</div>
   <h2 class="section-title reveal">Três fases,<br>prioridade clara.</h2>
   <p class="section-desc reveal">Clique em cada fase para ver todos os itens. Os itens marcados com.</p>
   <div class="fases-container reveal">
-
     <!-- FASE 1 -->
     <div class="fase fase-1 open" id="fase-1">
       <div class="fase-header" onclick="toggleFase('fase-1')">
@@ -573,7 +540,6 @@ document.body.style.overflow='hidden';
         </div>
       </div>
     </div>
-
     <!-- FASE 2 -->
     <div class="fase fase-2" id="fase-2">
       <div class="fase-header" onclick="toggleFase('fase-2')">
@@ -649,7 +615,6 @@ document.body.style.overflow='hidden';
         </div>
       </div>
     </div>
-
     <!-- FASE 3 -->
     <div class="fase fase-3" id="fase-3">
       <div class="fase-header" onclick="toggleFase('fase-3')">
@@ -692,7 +657,6 @@ document.body.style.overflow='hidden';
     </div>
   </div>
 </section>
-
 <!-- AEREO -->
 <section id="aereo">
   <div class="section-label" style="color:var(--gold-light)">Estratégia aérea</div>
@@ -717,25 +681,18 @@ document.body.style.overflow='hidden';
     </div>
   </div>
 </section>
-
-
-
-
 <!-- FOOTER -->
-
 <!-- ROADMAP -->
 <section id="roadmap">
   <div class="section-label">Execução</div>
   <h2 class="section-title reveal">Roadmap do projeto</h2>
   <p class="section-desc reveal">Acompanhe o status de cada entregável. Clique na frente para expandir. Clique no item para ver o To-Do e o link da entrega. · <strong>Semana atual: 1</strong></p>
-
   <div class="rm-summary reveal">
-    <div class="rm-summary-item"><div class="rm-summary-num num-feito">4</div><div class="rm-summary-label">✓ Feitos</div></div>
+    <div class="rm-summary-item"><div class="rm-summary-num num-feito">7</div><div class="rm-summary-label">✓ Feitos</div></div>
     <div class="rm-summary-item"><div class="rm-summary-num num-andamento">2</div><div class="rm-summary-label">▶ Em andamento</div></div>
     <div class="rm-summary-item"><div class="rm-summary-num num-pendente">42</div><div class="rm-summary-label">— Pendentes</div></div>
     <div class="rm-summary-item"><div class="rm-summary-num num-aprovacao">2</div><div class="rm-summary-label">⏸ Aguardando aprovação</div></div>
   </div>
-
   <div class="reveal" style="margin-top:48px"><div class="rm-frente open">
       <div class="rm-frente-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="rm-frente-titulo">Produto e Curadoria</div>
@@ -760,7 +717,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Listar todos os roteiros ativos no sistema<br>Verificar hoteis, inclusoes e precos de cada um<br>Identificar problemas: hotel ruim, preco errado, produto obsoleto<br>Decidir por item: manter, ajustar ou remover</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Lista com status de cada roteiro ativo e recomendacao de acao por produto</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Ninguem</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-01"><a href="https://cvcbrasil-my.sharepoint.com/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/Item%201%20-%20Curadoria%20Produtos%20Africa%20Sul%20360.pdf?CT=1780046975025&OR=ItemsView" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-01"><a href="https://cvcbrasil-my.sharepoint.com/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/Item%201%20-%20Curadoria%20Produtos%20Africa%20Sul%20360.pdf?CT=1780046975025&OR=ItemsView" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -962,7 +919,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Suas anotacoes da imersao no destino<br>Validacao com Akilanga<br>Definir formato: PDF, card ou portal digital<br>1 revisao técnica antes de publicar</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Material de 1-2 páginas: regioes, clima, melhor época, o que nao prometer, perfil por produto</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Ninguem</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-11"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-11"><a href="https://carolbessas-coder.github.io/Portal-Destinos-CVC/" target="_blank" class="rm-link-btn">🌐 Abrir portal ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1107,7 +1064,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Acesso aos dados de frequencias SAA e LATAM<br>Levantar datas, condicoes, prazos de devolucao e grupos</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Planilha de frequências, condicoes e bloqueios disponíveis</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Ninguem</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-18"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-18"><a href="https://cvcbrasil-my.sharepoint.com/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/Item%2018%20-%20Africa%20Sul%20360%20Malha%20Aerea%20Bloqueios.pdf?CT=1780047012282&OR=ItemsView" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1117,8 +1074,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">19</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Confirmar bloqueios aéreos SAA existentes</div><div class="rm-item-obs">Verificar datas, assentos disponíveis</div></div>
             <div class="rm-item-resp">Caroline + Aéreo</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">▶ Em andamento</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-feito">▶ Em andamento</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-19" style="display:none">
@@ -1126,7 +1083,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Reuniao com área de Aéreo<br>Verificar bloqueios existentes, datas e assentos disponíveis</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Confirmacao dos bloqueios ativos com datas e condicoes</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Área de Aéreo</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-19"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-19"><span style="font-size:12px;color:#2B4BA0;font-weight:500">📋 Consolidado no Item 18 — Estudo de Malha Aérea e Bloqueios</span></div></div>
         </div>
           </div>
         </div>
@@ -1136,8 +1093,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">20</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Avaliar expansão de bloqueios SAA</div><div class="rm-item-obs">Novas datas, novas origens além de GRU</div></div>
             <div class="rm-item-resp">Caroline + Aéreo</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s3">Semana 3</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-20" style="display:none">
@@ -1145,7 +1102,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Reuniao com área de Aéreo e Nathalia<br>Avaliar novas datas e origens além de GRU</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Decisao sobre expansao dos bloqueios — novas datas e origens confirmadas</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Área de Aéreo</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-20"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-20"><span style="font-size:12px;color:#2B4BA0;font-weight:500">📋 Consolidado no Item 18 — Estudo de Malha Aérea e Bloqueios</span></div></div>
         </div>
           </div>
         </div>
@@ -1167,7 +1124,7 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">21</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Definir cronograma periódico de treinamentos</div><div class="rm-item-obs">Formato, datas, plataforma e facilitadores</div></div>
             <div class="rm-item-resp">Caroline + Planejamento</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s3">Semana 3</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">Semana 3</span></div>
             <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
@@ -1680,7 +1637,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Analise de roteiros e hotelaria da Special Tours</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Lista com status de cada roteiro e recomendacao de acao</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Nathalia</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-45"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-45"><a href="https://cvcbrasil-my.sharepoint.com/:x:/r/personal/cbessa_cvccorp_com_br/_layouts/15/Doc.aspx?sourcedoc=%7BDE4FB634-B81E-43AC-B1E1-262FBF30EF8E%7D&file=GV%20HOTEIS%20PREVISTOS%2026%2027%20-%20Analise%20de%20Ex%25u00f3ticos.xlsx&action=default&mobileredirect=true" target="_blank" class="rm-link-btn">📊 Ver análise ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1796,7 +1753,6 @@ document.body.style.overflow='hidden';
       </div>
     </div></div>
 </section>
-
 <footer>
   <div>
     <div class="footer-titulo">África do Sul 360°</div>
@@ -1810,7 +1766,6 @@ document.body.style.overflow='hidden';
     <span>CVC Corp · Maio 2026</span>
   </div>
 </footer>
-
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
   <div class="modal">
@@ -1820,7 +1775,6 @@ document.body.style.overflow='hidden';
     <div class="modal-desc" id="modal-desc"></div>
   </div>
 </div>
-
 <!-- JORNADA MODAL -->
 <div class="jornada-modal-overlay" id="jornada-modal" onclick="if(event.target===this)closeJornadaModal()">
   <div class="jornada-modal">
@@ -1830,7 +1784,6 @@ document.body.style.overflow='hidden';
     <div class="jornada-modal-desc" id="jm-desc"></div>
   </div>
 </div>
-
 <script>
 function togglePilar(index){
   const pilares=document.querySelectorAll('.pilar');
@@ -1887,7 +1840,6 @@ const observer=new IntersectionObserver((entries)=>{
   });
 },{threshold:0.1});
 reveals.forEach(el=>observer.observe(el));
-
 function toggleTodo(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -1897,6 +1849,5 @@ function toggleTodo(id) {
   if (wrap) wrap.classList.toggle('todo-open', !isOpen);
 }
 </script>
-
 </body>
 </html>
