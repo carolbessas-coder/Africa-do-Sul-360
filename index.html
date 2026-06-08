@@ -267,6 +267,7 @@ footer{background:var(--dark);padding:80px 10vw;display:flex;justify-content:spa
 .rm-item-status{padding:14px 16px;display:flex;align-items:center;justify-content:center;border-left:1px solid rgba(27,42,107,.06)}
 .rm-status{font-size:11px;font-weight:700;padding:4px 10px;border-radius:2px;text-align:center}
 .rm-status-feito{background:#E8F5E9;color:#2E7D32}
+.rm-status-andamento{background:rgba(43,75,160,.1);color:#2B4BA0}
 .rm-status-pendente{background:var(--grey-light);color:var(--sage)}
 .rm-status-aprovacao{background:rgba(205,89,55,.08);color:var(--rust)}
 .rm-col-header{display:grid;grid-template-columns:48px 1fr 140px 140px 110px;gap:0;background:var(--earth-mid);margin-bottom:2px}
@@ -686,11 +687,11 @@ document.body.style.overflow='hidden';
 <section id="roadmap">
   <div class="section-label">Execução</div>
   <h2 class="section-title reveal">Roadmap do projeto</h2>
-  <p class="section-desc reveal">Acompanhe o status de cada entregável. Clique na frente para expandir. Clique no item para ver o To-Do e o link da entrega. · <strong>Semana atual: 1</strong></p>
+  <p class="section-desc reveal">Acompanhe o status de cada entregável. Clique na frente para expandir. Clique no item para ver o To-Do e o link da entrega. · <strong>Semana atual: 3</strong></p>
   <div class="rm-summary reveal">
-    <div class="rm-summary-item"><div class="rm-summary-num num-feito">7</div><div class="rm-summary-label">✓ Feitos</div></div>
-    <div class="rm-summary-item"><div class="rm-summary-num num-andamento">2</div><div class="rm-summary-label">▶ Em andamento</div></div>
-    <div class="rm-summary-item"><div class="rm-summary-num num-pendente">42</div><div class="rm-summary-label">— Pendentes</div></div>
+    <div class="rm-summary-item"><div class="rm-summary-num num-feito">12</div><div class="rm-summary-label">✓ Feitos</div></div>
+    <div class="rm-summary-item"><div class="rm-summary-num num-andamento">1</div><div class="rm-summary-label">▶ Em andamento</div></div>
+    <div class="rm-summary-item"><div class="rm-summary-num num-pendente">37</div><div class="rm-summary-label">— Pendentes</div></div>
     <div class="rm-summary-item"><div class="rm-summary-num num-aprovacao">2</div><div class="rm-summary-label">⏸ Aguardando aprovação</div></div>
   </div>
   <div class="reveal" style="margin-top:48px"><div class="rm-frente open">
@@ -746,8 +747,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">03</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Avaliar produtos Akilanga</div><div class="rm-item-obs">Avaliar e definir portfólio prioritário</div></div>
             <div class="rm-item-resp">Caroline</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">Semana 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-03" style="display:none">
@@ -755,7 +756,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Portfólio atualizado da Akilanga em maos<br>Comparar com mercado e concorrentes</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Avaliacao do portfólio com produtos prioritários definidos</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Portfólio Akilanga</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-03"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-03"><a href="https://cvcbrasil-my.sharepoint.com/:b:/r/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/%C3%81frica%20do%20Sul/Item%204%20Reuniao%20Akilanga.pdf?csf=1&web=1&e=flxl0o" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -765,8 +766,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">04</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Reunião com Akilanga — estratégia conjunta</div><div class="rm-item-obs">Estruturar roteiros, métricas, posicionamento e novos direcionamentos</div></div>
             <div class="rm-item-resp">Caroline</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">Semana 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-04" style="display:none">
@@ -774,7 +775,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Portfólio atualizado da Akilanga em maos<br>Pauta preparada: roteiros prioritários, métricas, posicionamento<br>Definir produtos para carregamento imediato</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Ata de reunião com produtos definidos, prazos e responsáveis</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Portfólio Akilanga + disponibilidade</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-04"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-04"><a href="https://cvcbrasil-my.sharepoint.com/:b:/r/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/%C3%81frica%20do%20Sul/Item%204%20Reuniao%20Akilanga.pdf?csf=1&web=1&e=flxl0o" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -893,7 +894,6 @@ document.body.style.overflow='hidden';
           </div>
         </div>
           </div>
-        </div>
       </div>
     </div><div class="rm-frente">
       <div class="rm-frente-header" onclick="this.parentElement.classList.toggle('open')">
@@ -910,8 +910,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">11</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Guia rápido do destino</div><div class="rm-item-obs">Regiões, melhor época, perfil de cliente, o que não prometer</div></div>
             <div class="rm-item-resp">Caroline</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">Semana 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-11" style="display:none">
@@ -919,7 +919,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Suas anotacoes da imersao no destino<br>Validacao com Akilanga<br>Definir formato: PDF, card ou portal digital<br>1 revisao técnica antes de publicar</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Material de 1-2 páginas: regioes, clima, melhor época, o que nao prometer, perfil por produto</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Ninguem</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-11"><a href="https://carolbessas-coder.github.io/Portal-Destinos-CVC/" target="_blank" class="rm-link-btn">🌐 Abrir portal ↗</a></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-11"><a href="https://carolbessas-coder.github.io/Portal-Destinos-Exoticos-CVC-Corp/#destinos" target="_blank" class="rm-link-btn">🌐 Abrir portal ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -929,8 +929,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">12</div>
             <div class="rm-item-info"><div class="rm-item-titulo">FAQ — África do Sul sem medo</div><div class="rm-item-obs">Levantar objeções reais com 5-10 vendedores antes de escrever</div></div>
             <div class="rm-item-resp">Caroline</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">Semana 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-12" style="display:none">
@@ -938,7 +938,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Ouvir 5-10 vendedores: quais objecoes travam a venda?<br>Listar todas as perguntas reais da rede<br>Escrever respostas claras e honestas<br>Revisar com quem conhece o destino</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Lista de 15-20 objecoes com respostas prontas para o vendedor usar no atendimento</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Ouvir vendedores antes</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-12"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-12"><a href="https://cvcbrasil-my.sharepoint.com/:b:/r/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/%C3%81frica%20do%20Sul/Item%2012%20A%20FAQ%20Africa%20do%20Sul%20Passageiro.pdf?csf=1&web=1&e=cGMWNH" target="_blank" class="rm-link-btn">📎 FAQ Passageiro ↗</a><br><br><a href="https://cvcbrasil-my.sharepoint.com/:b:/r/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/%C3%81frica%20do%20Sul/Item%2012%20B%20FAQ%20Africa%20do%20Sul%20Consultor.pdf?csf=1&web=1&e=2rAF5c" target="_blank" class="rm-link-btn" style="margin-top:6px">📎 FAQ Consultor ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1022,10 +1022,10 @@ document.body.style.overflow='hidden';
         </div><div class="rm-item-wrap">
           <div class="rm-item" onclick="toggleTodo('todo-17')">
             <div class="rm-item-num">17</div>
-            <div class="rm-item-info"><div class="rm-item-titulo">Assistente de Exóticos — Robô Interativo</div><div class="rm-item-obs">Portal de consulta em tempo real durante o atendimento</div></div>
+            <div class="rm-item-info"><div class="rm-item-titulo">Portal de consulta com bot interativo</div><div class="rm-item-obs">Portal de consulta em tempo real durante o atendimento</div></div>
             <div class="rm-item-resp">Caroline + TI</div>
             <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-m2">Mês 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-andamento">▶ Em andamento</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-17" style="display:none">
@@ -1033,7 +1033,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Materiais base prontos<br>Alinhamento com TI para construcao do portal<br>Definir escopo e funcionalidades</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Portal de consulta em tempo real durante o atendimento</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Materiais base + TI</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-17"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-17"><a href="https://carolbessas-coder.github.io/Portal-Destinos-Exoticos-CVC-Corp/#destinos" target="_blank" class="rm-link-btn">🌐 Abrir portal ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1231,8 +1231,8 @@ document.body.style.overflow='hidden';
             <div class="rm-item-num">26</div>
             <div class="rm-item-info"><div class="rm-item-titulo">Primeiras pílulas de comunicação interna</div><div class="rm-item-obs">3 a 5 cards ou mensagens sobre o destino</div></div>
             <div class="rm-item-resp">Caroline</div>
-            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s2">Semana 2</span></div>
-            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s1">✓ Feito</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-feito">✓ Feito</span></div>
             <div class="rm-item-expand">▾</div>
           </div>
           <div class="rm-todo-wrap" id="todo-26" style="display:none">
@@ -1240,7 +1240,7 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Canais definidos e aprovados<br>Definir os 3 a 5 primeiros temas<br>Producao dos cards ou mensagens</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Primeiras pílulas de comunicacao interna publicadas nos canais</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Canais definidos</div></div>
-          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-26"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-26"><a href="https://cvcbrasil-my.sharepoint.com/:b:/r/personal/cbessa_cvccorp_com_br/Documents/Produtos/Ex%C3%B3ticos/%C3%81frica%20do%20Sul/Item26%20MinutoExoticos%20AfricadoSul.pdf?csf=1&web=1&e=WAVYgq" target="_blank" class="rm-link-btn">📎 Ver entrega ↗</a></div></div>
         </div>
           </div>
         </div>
@@ -1745,6 +1745,56 @@ document.body.style.overflow='hidden';
           <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Metodologia Exóticos 360 documentada e pronta para replicar</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Africa do Sul rodando</div></div>
           <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-50"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+        </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="rm-frente">
+      <div class="rm-frente-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="rm-frente-titulo">Complementar</div>
+        <div class="rm-frente-count">2 itens</div>
+        <div class="rm-frente-toggle">+</div>
+      </div>
+      <div class="rm-itens">
+        <div class="rm-col-header">
+          <span>#</span><span>Entregável</span><span>Responsável</span><span>Prazo</span><span>Status</span><span>+</span>
+        </div>
+        <div class="rm-item-wrap">
+          <div class="rm-item" onclick="toggleTodo('todo-51')">
+            <div class="rm-item-num">51</div>
+            <div class="rm-item-info"><div class="rm-item-titulo">Mapear brokers que comercializem lodge com safári</div><div class="rm-item-obs">Identificar junto à Conectividade quais brokers têm lodges no portfólio</div></div>
+            <div class="rm-item-resp">Caroline + Conectividade</div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s3">Semana 3</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-expand">▾</div>
+          </div>
+          <div class="rm-todo-wrap" id="todo-51" style="display:none">
+            <div class="rm-todo">
+          <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Contato com Conectividade para identificar quais brokers têm lodge com safári no portfólio online</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Lista de brokers ativos com lodge — verificar quais estão integrados e quais têm lodge de qualidade</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Conectividade</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-51"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
+        </div>
+          </div>
+        </div>
+          </div>
+        </div><div class="rm-item-wrap">
+          <div class="rm-item" onclick="toggleTodo('todo-52')">
+            <div class="rm-item-num">52</div>
+            <div class="rm-item-info"><div class="rm-item-titulo">Mapeamento de precificação e qualidade do carregamento de lodges via broker no sistema</div><div class="rm-item-obs">Verificar se o produto disponível via broker está correto, atualizado e competitivo</div></div>
+            <div class="rm-item-resp">Caroline</div>
+            <div class="rm-item-prazo"><span class="rm-prazo rm-prazo-s3">Semana 3</span></div>
+            <div class="rm-item-status"><span class="rm-status rm-status-pendente">— Pendente</span></div>
+            <div class="rm-item-expand">▾</div>
+          </div>
+          <div class="rm-todo-wrap" id="todo-52" style="display:none">
+            <div class="rm-todo">
+          <div class="rm-todo-col"><div class="rm-todo-label">O que é necessário</div><div class="rm-todo-text">Lista de brokers em mãos (item 51 concluído)<br>Entrar no sistema e pesquisar cada lodge disponível via broker<br>Verificar preço, inclusões, fotos, descrição e competitividade</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">O que você produz</div><div class="rm-todo-text">Lista com todos os lodges e status de cada um — inclusões, região, categoria e descrição. Avaliação do que pode ser vendido com confiança e o que precisa de ajuste</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">Depende de</div><div class="rm-todo-text">Mapeamento de brokers concluído (item 51)</div></div>
+          <div class="rm-todo-col"><div class="rm-todo-label">📎 Link da entrega</div><div class="rm-todo-text rm-link-area" id="link-52"><span class="rm-link-empty">— Sem entrega ainda</span></div></div>
         </div>
           </div>
         </div>
